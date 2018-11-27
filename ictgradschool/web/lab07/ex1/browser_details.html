@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-<table>
+<table id="navTable">
     <thead>
     <tr>
         <th colspan="2">Table details</th>
@@ -36,9 +36,21 @@
 </table>
 
 <script>
-	// populate the 'contents' table with information from the 'navigator' object
-	// http://www.w3schools.com/jsref/dom_obj_table.asp
-	// http://www.w3schools.com/jsref/met_table_insertrow.asp
+    // populate the 'contents' table with information from the 'navigator' object
+    // http://www.w3schools.com/jsref/dom_obj_table.asp
+    // http://www.w3schools.com/jsref/met_table_insertrow.asp
+
+    var table = document.getElementById("contents");
+    for (var property in navigator){
+        navigator[property];
+        let row=table.insertRow();
+        let cell1=row.insertCell(0);
+        cell1.textContent=property;
+        let cell2=row.insertCell(1);
+        cell2.textContent=navigator[property];
+    }
+    
+
 </script>
 </body>
 </html>
