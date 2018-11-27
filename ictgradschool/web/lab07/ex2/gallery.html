@@ -118,7 +118,7 @@ div#thumbview img {
 		selectedImage = numImage; // keep track for next time of what image has been selected
 	}
 
-	
+
 	function loadRandomImage() {
 		// Generate the random index into the array of images:
 		// Math.random returns a random decimal point number between 0 and 1
@@ -129,8 +129,20 @@ div#thumbview img {
 		
 		// Now we know number of the random image we want to show, so change the featured image using this:
 		changeImage(numImage);
-	}	
-	
+	}
+
+	window.addEventListener("load", loadRandomImage);
+	window.addEventListener("click", listener);
+
+	function listener(event) {
+	    // document.getElementById("featuredImage").addEventListener("click",loadRandomImage)
+		var e = event.target;
+		if(e.id="featuredImage"){
+		    loadRandomImage();
+		}
+    }
+    // document.body.onload = function() {loadRandomImage()};
+
 </script>
 </head>
 <body>
