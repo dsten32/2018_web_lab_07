@@ -79,73 +79,77 @@ div#thumbview img {
 }
 
 </style>
+	<script>
+        "use strict";
 
-<script>
-	"use strict";
+        // To understand the following script, make sure to have gone through the examples in p.345 and p.347 of the textbook
 
-	// To understand the following script, make sure to have gone through the examples in p.345 and p.347 of the textbook
-	
-	// The imageCollection is declared in the <head>, so the rest of the page including any scripts further down will know about it
-	// There are 11 strings in imageCollection, which are the filenames (minus file extension) of the 11 images
-	// The contents are at position 0 to 10 not 1 to 11!
-	var imageCollection = [
-		"arctic_fox",
-		"grazing_wombat",
-		"Himalayan_Pika",
-		"lynx",
-		"Pallas_Cat",
-		"Pallas_Cat2",
-		"pika",
-		"quokka",
-		"RedPanda",
-		"wombat2",
-		"wombats"
-	];
-	
-	var selectedImage = 0; // index of image selected, between 0 and length of array non-inclusive
-	
-	
-	function changeImage(numImage) {
-		// uses the variable numImage, which is passed in, to access the associated value from the "imageCollection" declared above,
-		// then sets the featuredImage to this image
-		
-		var featuredImage = document.getElementById("featuredImage");		
-		
-		featuredImage.src = "../images/" + imageCollection[numImage] + ".jpg"; // mustn't forget the file extension and the "images/" folder prefix
-		featuredImage.title = imageCollection[numImage];
-        featuredImage.alt = imageCollection[numImage];
-		
-		// leave this line at the end of this function
-		selectedImage = numImage; // keep track for next time of what image has been selected
-	}
+        // The imageCollection is declared in the <head>, so the rest of the page including any scripts further down will know about it
+        // There are 11 strings in imageCollection, which are the filenames (minus file extension) of the 11 images
+        // The contents are at position 0 to 10 not 1 to 11!
+        var imageCollection = [
+            "arctic_fox",
+            "grazing_wombat",
+            "Himalayan_Pika",
+            "lynx",
+            "Pallas_Cat",
+            "Pallas_Cat2",
+            "pika",
+            "quokka",
+            "RedPanda",
+            "wombat2",
+            "wombats"
+        ];
+
+        var selectedImage = 0; // index of image selected, between 0 and length of array non-inclusive
 
 
-	function loadRandomImage() {
-		// Generate the random index into the array of images:
-		// Math.random returns a random decimal point number between 0 and 1
-		// We want a *whole* number (int) between 0 inclusive and the number of images in imageCollection exclusive
-		// To get a whole number, use Math.floor() to round down.
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-		var numImage = Math.floor(Math.random() * (imageCollection.length)); // generates a number between 0 and upto but not including 11: [0, 11). 
-		
-		// Now we know number of the random image we want to show, so change the featured image using this:
-		changeImage(numImage);
-	}
+        function changeImage(numImage) {
+            // uses the variable numImage, which is passed in, to access the associated value from the "imageCollection" declared above,
+            // then sets the featuredImage to this image
 
-	window.addEventListener("load", loadRandomImage);
+            var featuredImage = document.getElementById("featuredImage");
 
-	window.addEventListener("click", listener);
+            featuredImage.src = "../images/" + imageCollection[numImage] + ".jpg"; // mustn't forget the file extension and the "images/" folder prefix
+            featuredImage.title = imageCollection[numImage];
+            featuredImage.alt = imageCollection[numImage];
 
-	function listener(event) {
-	    // document.getElementById("featuredImage").addEventListener("click",loadRandomImage)
-		var e = event.target;
-		if(e.id="featuredImage"){
-		    loadRandomImage();
-		}
-    }
-    // document.body.onload = function() {loadRandomImage()};
+            // leave this line at the end of this function
+            selectedImage = numImage; // keep track for next time of what image has been selected
+        }
 
-</script>
+
+        function loadRandomImage() {
+            // Generate the random index into the array of images:
+            // Math.random returns a random decimal point number between 0 and 1
+            // We want a *whole* number (int) between 0 inclusive and the number of images in imageCollection exclusive
+            // To get a whole number, use Math.floor() to round down.
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+            var numImage = Math.floor(Math.random() * (imageCollection.length)); // generates a number between 0 and upto but not including 11: [0, 11).
+
+            // Now we know number of the random image we want to show, so change the featured image using this:
+            changeImage(numImage);
+        }
+
+        window.addEventListener("load", loadRandomImage);
+
+        // Use DOM to get 'featuredImage' and set its onclick event
+        // var featuredImage=document.getElementById("featuredImage");
+        // featuredImage.onclick = loadRandomImage;
+        window.addEventListener("click", listener);
+        document.addEventListener("DOMContentLoaded",listener);
+
+        function listener(event) {
+             // document.getElementById("featuredImage").addEventListener("click",loadRandomImage)
+             var e = event.target;
+             if(e.id==="featuredImage"){
+                 loadRandomImage();
+             }
+         }
+        // document.body.onload = function() {loadRandomImage()};
+
+	</script>
+
 </head>
 <body>
 
@@ -169,5 +173,6 @@ div#thumbview img {
 	<div class="thumb-holder"><img src="../images/thumbs/9.gif" alt="thumb" /></div>
 	<div class="thumb-holder"><img src="../images/thumbs/10.gif" alt="thumb" /></div>
 </div>
+
 </body>
 </html>
