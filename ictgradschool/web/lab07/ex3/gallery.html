@@ -149,13 +149,11 @@ div#thumbview img {
 	window.addEventListener("load", loadRandomImage);
 
 
-	// var imgs= window.document.getElementsByTagName("img");
-    // imgs.addEventListener("click",getImageNum)
+
 window.addEventListener("load",function () {
 	let holders=document.getElementsByClassName("thumb-holder");
 	for (let i=0;i<holders.length;i++){
 	    let holder=holders[i];
-        // holder.addEventListener("blur",changeBackground(i));
 	    holder.onclick = function () {
 			changeImage(i);
 			holder.style.backgroundColor="pink";
