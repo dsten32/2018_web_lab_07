@@ -102,21 +102,21 @@ div#thumbview img {
     //     "wombats"
     // ];
 
-    var imageCollection = {
-	[name:"arctic_fox",description:"Arctic Fox: stuff about this"],
-        grazing_wombat:"grazing_wombat: stuff about this",
-        Himalayan_Pika:"Himalayan_Pika: stuff about this",
-        lynx:"lynx: stuff about this",
-        Pallas_Cat:"Pallas_Cat: stuff about this",
-        Pallas_Cat2:"Pallas_Cat2: stuff about this",
-        pika:"pika: stuff about this",
-        quokka:"quokka: stuff about this",
-        RedPanda:"RedPanda: stuff about this",
-        wombat2:"wombat2: stuff about this",
-        wombats:"wombats: stuff about this"
-    };
-	
-	var selectedImage = 0; // index of image selected, between 0 and length of array non-inclusive
+    var imageCollection = [
+        {name:"arctic_fox",description:"Arctic Fox: stuff about this"},
+        {name:"grazing_wombat",description:"grazing_wombat: stuff about this"},
+        {name:"Himalayan_Pika:",description:"Himalayan_Pika: stuff about this"},
+        {name:"lynx:",description:"lynx: stuff about this"},
+        {name:"Pallas_Cat:",description:"Pallas_Cat: stuff about this"},
+        {name:"Pallas_Cat2:",description:"Pallas_Cat2: stuff about this"},
+        {name:"pika:",description:"pika: stuff about this",
+        {name:"quokka:",description:"quokka: stuff about this"},
+        {name:"RedPanda:",description:"RedPanda: stuff about this"},
+        {name:"wombat2:",description:"wombat2: stuff about this"},
+        {name:"wombats:",description:"wombats: stuff about this"}
+    ];
+
+    var selectedImage = 0; // index of image selected, between 0 and length of array non-inclusive
 	
 	
 	function changeImage(numImage) {
