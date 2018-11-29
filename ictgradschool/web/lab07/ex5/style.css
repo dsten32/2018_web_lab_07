@@ -1,0 +1,100 @@
+/* Write the CSS for you answer here */
+#div-all{
+    position: relative;
+    margin: auto;
+    width: 600px;
+}
+
+#bground{
+    width: 100%;
+    position: absolute;
+
+    }
+
+#land{
+    z-index: 5;
+}
+
+#tree {
+    position: center;
+    top:100px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.bauble{
+    position: absolute;
+    z-index: 100;
+    width: 49px;
+    animation-duration: 2s;
+    animation-name: falling;
+    animation-play-state: paused;
+
+    animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+    from{
+    }
+    25% {
+        top: 440px;
+    }
+    40% {
+        top: 420px;
+    }
+    75% {
+        top: 440px;
+    }
+    90% {
+        top: 430px;
+    }
+    100% {
+        top: 440px;
+    }
+}
+
+#container:hover > .bauble {
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+
+img.bauble:hover{
+    width: 55px;
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+    transition-delay: 0.05s;
+}
+
+#blueb{
+    top: 341px;
+    left: 35px;
+}
+
+#dblueb{
+    top: 296px;
+    left: 122px;
+}
+
+#greenb{
+    top: 329px;
+    left: 198px;
+}
+
+#orangb{
+    top: 290px;
+    left: 345px;
+    z-index: 9;
+}
+
+#pinkb{
+    top: 247px;
+    left: 419px;
+}
+
+#redb{
+    top: 313px;
+    left: 512px;
+    z-index: 9;
+}
+
