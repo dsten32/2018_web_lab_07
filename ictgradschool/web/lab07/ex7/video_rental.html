@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rental Details</title>
+    <script src="customerdb.js"></script>
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <script src="script.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            height: 100px;
+            width: 200px;
+            padding: 10px;
+            font-family: sans-serif;
+            font-size: 30pt;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+
+
+        /* http://www.w3schools.com/cssref/css_selectors.asp */
+
+        th, tr:last-child { /* last tr child of its parent (table) */
+            border-bottom: 1px solid black;
+        }
+
+        tfoot {
+            height: 20px;
+            font-size: small;
+        }
+
+        td:first-child { /* first td child of its parent (tr) */
+            background-color: Lavender;
+            border-right: 1px solid black;
+            cellspacing: 0px;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>DOB</td>
+        <td>Joined</td>
+        <td>Hires</td>
+    </tr>
+    </thead>
+    <tbody id="contents"></tbody>
+    <tfoot>
+    <tr>
+        <td colspan="5">END OF DB</td>
+    </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
