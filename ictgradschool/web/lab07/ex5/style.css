@@ -29,8 +29,11 @@
     animation-duration: 2s;
     animation-name: falling;
     animation-play-state: paused;
-
     animation-iteration-count: infinite;
+}
+
+.bauble.off{
+    animation-name: none;
 }
 
 @keyframes falling {
@@ -53,10 +56,10 @@
     }
 }
 
-#container:hover > .bauble {
-    animation-play-state: running;
-    animation-fill-mode: forwards;
-}
+/*#container:hover > .bauble {*/
+    /*animation-play-state: running;*/
+    /*animation-fill-mode: forwards;*/
+/*}*/
 
 img.bauble:hover{
     width: 55px;
