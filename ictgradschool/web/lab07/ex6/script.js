@@ -1,17 +1,16 @@
 $(document).ready(function () {
     console.log("doc ready doofus");
+    //if js enabled then changing to js style sheet.
+    $('link').attr('href','style_js.css');
 
     var pageNo=0;
-    var zindex=0;
-    // $('.page').css('animation','none');
+//on clicking elements of class 'page' activatinf the function to set the animation going, reducing the delay to 10ms and setting the zindex of the next element to 1 after a window time delay.
 $('.page').on('click',function () {
     $(this).addClass('pageAnimation').css('animation-delay','10ms');
     pageNo+=1;
-    zindex+=1; //z-index: -1;
     window.setTimeout(setZ,600);
     function setZ(){
-    $('#page'+pageNo).css('z-index',zindex);
-    // $('#page'+pageNo).attr('z-index',zindex);
+    $('#page'+pageNo).css('z-index',1);
     }
 })
 
