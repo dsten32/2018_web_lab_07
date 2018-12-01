@@ -49,7 +49,7 @@ $(document).ready(function () {
 //these people should be dead..
     var deadPool="";
     for (let i = 0; i < customers.length; i++) {
-        if (currYear-customers[i].year_born>=100){
+        if (currYear-customers[i].year_born>=95){
             deadPool+=customers[i].name+", ";
         }
     }
