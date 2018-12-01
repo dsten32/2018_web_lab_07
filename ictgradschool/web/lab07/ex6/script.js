@@ -8,12 +8,25 @@ $(document).ready(function () {
 $('.page').on('click',function () {
     $(this).addClass('pageAnimation').css('animation-delay','10ms');
     pageNo+=1;
-    window.setTimeout(setZ,600);
+    window.setTimeout(setZ,400);
     function setZ(){
     $('#page'+pageNo).css('z-index',1);
     }
 })
 
+    var zIndex=0;
+    $('.backcover').on('click',function () {
+        pageNo=0;
+        $('.backcover').css('z-index',0);
+        $('.page').each(function () {
+           $(this).removeClass('pageAnimation');
+           if($(this).attr('class')==='page frontcover'){
+               $(this).css('z-index',10);
+           }
+           $(this).css('z-index',zIndex);
+            zIndex-=1;
+        });
+    })
 
 
 })
