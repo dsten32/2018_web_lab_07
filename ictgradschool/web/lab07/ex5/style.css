@@ -22,7 +22,7 @@
     pointer-events: none;
 }
 
-.bauble{
+.baubleAni{
     position: absolute;
     z-index: 100;
     width: 49px;

@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('link').attr('href','style_js.css');
 
     var pageNo=0;
-//on clicking elements of class 'page' activatinf the function to set the animation going, reducing the delay to 10ms and setting the zindex of the next element to 1 after a window time delay.
+//on clicking elements of class 'page' activating the function to set the animation going, reducing the delay to 10ms and setting the z-index of the next element to 1 after a window time delay.
 $('.page').on('click',function () {
     $(this).addClass('pageAnimation').css('animation-delay','10ms');
     pageNo+=1;
@@ -14,6 +14,7 @@ $('.page').on('click',function () {
     }
 })
 
+    //returning book to ready state when back cover div is clicked.
     var zIndex=0;
     $('.backcover').on('click',function () {
         pageNo=0;
