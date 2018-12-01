@@ -63,7 +63,7 @@ img.page {
 }
 
 
-.page {
+.pageAnimation {
     transform-origin: top left;
 
     animation-name: flippage;
