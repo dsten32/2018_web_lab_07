@@ -36,9 +36,11 @@ $(document).ready(function () {
     }
 
 //    get loyally tier
+    var gtiersNames="";
     for (let i = 0; i < customers.length; i++) {
         if (customers[i].num_hires/((currYear-customers[i].joined)*52)>=4){
             goldTier++;
+            gtiersNames+=customers[i].name+", ";
         } else if (customers[i].num_hires/((currYear-customers[i].joined)*52)>=1){
             silverTier++;
         } else if (customers[i].num_hires/((currYear-customers[i].joined)*52)<1){
@@ -125,7 +127,7 @@ $(document).ready(function () {
     cell_1.textContent="Gold Level Members";
     cell_2=statsD.insertCell(1);
     cell_2.setAttribute('colspan','4');
-    cell_2.textContent=goldTier;
+    cell_2.textContent=goldTier+": "+gtiersNames.substring(0,gtiersNames.length-2)+". Congratulations guys";
 
     //silver tier
     statsD = table.insertRow();
