@@ -28,13 +28,13 @@
     width: 49px;
     animation-duration: 2s;
     animation-name: falling;
-    animation-play-state: paused;
-    animation-iteration-count: infinite;
+    /*animation-play-state: paused;*/
+    animation-iteration-count: 1;
 }
 
-.bauble.off{
-    animation-name: none;
-}
+/*.bauble.off{*/
+    /*animation-name: none;*/
+/*}*/
 
 @keyframes falling {
     from{
@@ -56,10 +56,10 @@
     }
 }
 
-/*#container:hover > .bauble {*/
-    /*animation-play-state: running;*/
-    /*animation-fill-mode: forwards;*/
-/*}*/
+#container:hover > .bauble {
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
 
 img.bauble:hover{
     width: 55px;
